@@ -35,6 +35,10 @@ namespace RefactoringExercise
                 {
                     MakeSquare(number);
                 }
+                else
+                {
+                    Console.WriteLine("You have writen an invalid number for the hashatag amount");
+                }
             }
             void MakeSquare(int squarius = 5) //makse the squares, has a defult parameter of 5 (like the original code)
             {
@@ -64,7 +68,20 @@ namespace RefactoringExercise
             {
                 Console.Clear();
                 Console.WriteLine("What do you want to do?\n 1. A line\n 2. My Line\n 3. A Square\n 4. My Square\n 5. A border\n 6. My border\n 0. Exit");
-                answer = int.Parse(Console.ReadLine());
+
+
+                string theAnswer = Console.ReadLine();
+                
+                if (theAnswer == "0" || theAnswer == "1" || theAnswer == "2" || theAnswer == "3" || theAnswer == "4" || theAnswer == "5" || theAnswer == "6")
+                {
+                    answer = int.Parse(theAnswer);
+                }
+                else
+                {
+                    answer = 7;
+                }
+                
+                
 
                 switch (answer)
                 {
@@ -91,6 +108,9 @@ namespace RefactoringExercise
                     case 6:
                         BorderControll(Console.ReadLine());
                         break;
+                    case 7:
+                        Console.WriteLine("You have failed to give a valid number, try typing an number from 0-6 (not letters)");
+                            break;
 
                 }
                 Console.ReadLine();
