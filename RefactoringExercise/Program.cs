@@ -15,93 +15,90 @@ namespace RefactoringExercise
             //3- Validera input. dvs, parsa och kolla att det är i rätt typ
             //4- Hantera errors. Informera om fel och/eller skapa kod som inte crashar.
             //5- Ge feedback till användaren. Om den skriver fel ska den få veta varför.
+            bool isRunninf = true;
+            int answer;
             
-            int answer = -1;
+            void MakeLine(int lineLengt = 6) //makse line, has a defult parameter of six (like the orginal code)
+            {
+                for (int i = 0; i < lineLengt; i++)
+                {
+                    Console.Write(" # ");
+                }
+            }
+            void MaxHashtags(int number) //Hashatag counter thingy
+            {
+                if (number <= 10 && answer == 2)
+                {
+                    MakeLine(number);
+                }
+                else if (number <= 10 && answer == 4)
+                {
+                    MakeSquare(number);
+                }
+            }
+            void MakeSquare(int squarius = 5) //makse the squares, has a defult parameter of 5 (like the original code)
+            {
+                for (int i = 0; i < squarius; i++)
+                {
+                    for (int j = 0; j < squarius; j++)
+                    {
+                        Console.Write("##");
+                    }
+                    Console.WriteLine();
+                }
+            }
+            void BorderControll(string textInBorder = " Static Border ") //makse the border (it has the same deuflt parameter as the orignial code)
+            {
+                for (int i = 0; i < textInBorder.Length + 4; i++)
+                {
+                    Console.Write(" # ");
+                }
+                Console.WriteLine($"\n# {textInBorder} #");
+                for (int i = 0; i < textInBorder.Length + 4; i++)
+                {
+                    Console.Write(" # ");
+                }
+            }
 
-            while (answer != 0)
+            while (isRunninf)
             {
                 Console.Clear();
                 Console.WriteLine("What do you want to do?\n 1. A line\n 2. My Line\n 3. A Square\n 4. My Square\n 5. A border\n 6. My border\n 0. Exit");
                 answer = int.Parse(Console.ReadLine());
 
-                //Example Comment
-                if (answer == 1)
+                switch (answer)
                 {
-                        Console.WriteLine("");
-                        for (int i = 0; i < 6; i++)
-                        {
-                            Console.Write(" # ");
-                        }
-                }else if(answer == 2)
-                {
-                    Console.Write("How many hashtags (max 10)? ");
-                    int times = int.Parse(Console.ReadLine());
-                    Console.WriteLine("");
-                    for (int i = 0; i < times; i++)
-                    {
-                        Console.Write(" # ");
-                    }
-                }
-                else if(answer == 3)
-                {
-                    Console.WriteLine("");
-                    for (int i = 0; i < 5; i++)
-                    {
-                        for (int j = 0; j < 5; j++)
-                        {
-                            Console.Write("##");
-                        }
-                        Console.WriteLine();
-                    }
-                }
-                else if(answer == 4)
-                {
-                    Console.Write("How many hashtags (max 10)? ");
-                    int times = int.Parse(Console.ReadLine());
-                    Console.WriteLine("");
-                    for (int i = 0; i < times; i++)
-                    {
-                        for (int j = 0; j < times; j++)
-                        {
-                            Console.Write("##");
-                        }
-                        Console.WriteLine();
-                    }
-                }
-                else if (answer == 5)
-                {
-                    Console.WriteLine("");
-                    for (int i = 0; i < 17; i++)
-                    {
-                        Console.Write(" # ");
-                    }
-                    Console.WriteLine("\n# Static Border #");
-                    for (int i = 0; i < 17; i++)
-                    {
-                        Console.Write(" # ");
-                    }
-                }
-                else if(answer == 6)
-                {
-                    Console.WriteLine("Write a text of max 20 characters long:");
-                    string innerText= Console.ReadLine();
-                    Console.WriteLine("");
-                    for (int i = 0; i < innerText.Length+4; i++)
-                    {
-                        Console.Write("#");
-                    }
-                    Console.WriteLine("\n# "+innerText+" #");
-                    for (int i = 0; i < innerText.Length+4; i++)
-                    {
-                        Console.Write("#");
-                    }
+                    case 0:
+                        isRunninf = false;
+                        break;
+                    case 1:
+                        MakeLine();
+                        break;
+                    case 2:
+                        Console.WriteLine("How many hashtags (max 10)");
+                        MaxHashtags(int.Parse(Console.ReadLine()));
+                        break;
+                    case 3:
+                        MakeSquare();
+                        break;
+                    case 4:
+                        Console.WriteLine("How many hashtags (max 10)");
+                        MaxHashtags(int.Parse(Console.ReadLine()));
+                        break;
+                    case 5:
+                        BorderControll();
+                        break;
+                    case 6:
+                        BorderControll(Console.ReadLine());
+                        break;
 
                 }
+                Console.ReadLine();
 
-                Console.WriteLine("\n \n Press any key to continue...");
-                Console.ReadKey();
-                
             }
+
+
+
         }
     }
 }
