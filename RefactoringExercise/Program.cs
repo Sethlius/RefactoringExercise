@@ -71,7 +71,7 @@ namespace RefactoringExercise
                 }
                
             }
-
+             
             int hatagCOntroll(int theParseIsTryed = 0) //to make sure hastag is a number
             {
                 string theLine = Console.ReadLine();
