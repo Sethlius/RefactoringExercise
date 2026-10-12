@@ -53,18 +53,26 @@ namespace RefactoringExercise
             }
             void BorderControll(string textInBorder = " Static Border ") //makse the border (it has the same deuflt parameter as the orignial code)
             {
-                for (int i = 0; i < textInBorder.Length + 4; i++)
+                if (textInBorder.Length < 21)
                 {
-                    Console.Write(" # ");
+                    for (int i = 0; i < textInBorder.Length + 4; i++)
+                    {
+                        Console.Write(" # ");
+                    }
+                    Console.WriteLine($"\n# {textInBorder} #");
+                    for (int i = 0; i < textInBorder.Length + 4; i++)
+                    {
+                        Console.Write(" # ");
+                    }
                 }
-                Console.WriteLine($"\n# {textInBorder} #");
-                for (int i = 0; i < textInBorder.Length + 4; i++)
+                else
                 {
-                    Console.Write(" # ");
+                    Console.WriteLine("You have written to many letters, please write less letters");
                 }
+               
             }
 
-            void ififif(int theParseIsTryed)
+            void hatagCOntroll(int theParseIsTryed) //to make sure hastag is a number
             {
                 string theLine = Console.ReadLine();
                 if (theParseIsTryed == 1 || theParseIsTryed == 2 || theParseIsTryed == 3 || theParseIsTryed == 4 || theParseIsTryed == 5 || theParseIsTryed == 6 || theParseIsTryed == 7 || theParseIsTryed == 8 || theParseIsTryed == 9 || theParseIsTryed == 10)
@@ -76,7 +84,7 @@ namespace RefactoringExercise
                     Console.WriteLine("You have failed to give a valid number, the number range 1-10 (not letters)");
                 }
             }
-
+            
             while (isRunninf)
             {
                 Console.Clear();
@@ -106,19 +114,20 @@ namespace RefactoringExercise
                        
                     case 2:
                         Console.WriteLine("How many hashtags (max 10)");
-                        MaxHashtags(ififif());
+                        MaxHashtags(hatagCOntroll());
                         break;
                     case 3:
                         MakeSquare();
                         break;
                     case 4:
                         Console.WriteLine("How many hashtags (max 10)");
-                        MaxHashtags(ififif());
+                        MaxHashtags(hatagCOntroll());
                         break;
                     case 5:
                         BorderControll();
                         break;
                     case 6:
+                        Console.WriteLine("Write a sentence (max 20 letters)");
                         BorderControll(Console.ReadLine());
                         break;
                     case 7:
