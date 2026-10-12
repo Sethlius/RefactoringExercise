@@ -75,15 +75,16 @@ namespace RefactoringExercise
             int hatagCOntroll(int theParseIsTryed = 0) //to make sure hastag is a number
             {
                 string theLine = Console.ReadLine();
-                if (theParseIsTryed == 1 || theParseIsTryed == 2 || theParseIsTryed == 3 || theParseIsTryed == 4 || theParseIsTryed == 5 || theParseIsTryed == 6 || theParseIsTryed == 7 || theParseIsTryed == 8 || theParseIsTryed == 9 || theParseIsTryed == 10)
+                if (theLine == "1" || theLine == "2" || theLine == "3" || theLine == "4" || theLine == "5" || theLine == "6" || theLine == "7" || theLine == "8" || theLine == "9" || theLine == "10")
                 {
                     return theParseIsTryed = int.Parse(theLine);
                 }
                 else
                 {
                     Console.WriteLine("You have failed to give a valid number, the number range 1-10 (not letters)");
+                    return 0;
                 }
-                return 0;
+                
             }
             
             while (isRunninf)
