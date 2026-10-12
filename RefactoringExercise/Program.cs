@@ -64,6 +64,19 @@ namespace RefactoringExercise
                 }
             }
 
+            void ififif(int theParseIsTryed)
+            {
+                string theLine = Console.ReadLine();
+                if (theParseIsTryed == 1 || theParseIsTryed == 2 || theParseIsTryed == 3 || theParseIsTryed == 4 || theParseIsTryed == 5 || theParseIsTryed == 6 || theParseIsTryed == 7 || theParseIsTryed == 8 || theParseIsTryed == 9 || theParseIsTryed == 10)
+                {
+                    theParseIsTryed == int.Parse(theLine);
+                }
+                else
+                {
+                    Console.WriteLine("You have failed to give a valid number, the number range 1-10 (not letters)");
+                }
+            }
+
             while (isRunninf)
             {
                 Console.Clear();
@@ -75,12 +88,11 @@ namespace RefactoringExercise
                 if (theAnswer == "0" || theAnswer == "1" || theAnswer == "2" || theAnswer == "3" || theAnswer == "4" || theAnswer == "5" || theAnswer == "6")
                 {
                     answer = int.Parse(theAnswer);
-                }
+                } 
                 else
                 {
                     answer = 7;
                 }
-                
                 
 
                 switch (answer)
@@ -91,16 +103,17 @@ namespace RefactoringExercise
                     case 1:
                         MakeLine();
                         break;
+                       
                     case 2:
                         Console.WriteLine("How many hashtags (max 10)");
-                        MaxHashtags(int.Parse(Console.ReadLine()));
+                        MaxHashtags(ififif());
                         break;
                     case 3:
                         MakeSquare();
                         break;
                     case 4:
                         Console.WriteLine("How many hashtags (max 10)");
-                        MaxHashtags(int.Parse(Console.ReadLine()));
+                        MaxHashtags(ififif());
                         break;
                     case 5:
                         BorderControll();
@@ -110,14 +123,11 @@ namespace RefactoringExercise
                         break;
                     case 7:
                         Console.WriteLine("You have failed to give a valid number, try typing an number from 0-6 (not letters)");
-                            break;
-
+                        break;
                 }
                 Console.ReadLine();
 
             }
-
-
 
         }
     }
